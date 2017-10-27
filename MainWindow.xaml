@@ -1,0 +1,46 @@
+﻿<Window x:Class="WatchDog.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WatchDog"
+        mc:Ignorable="d" Closing="Window_Closing"
+        Title="WatchDog" Height="350" Width="525">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu Margin="1">
+            <MenuItem Header="File(_F)">
+                <MenuItem Header="Exit(_X)" Click="MenuItem_Click"/>
+            </MenuItem>
+            <MenuItem Header="Help(_H)">
+                <MenuItem Header="About(_A)" Click="About_Click"/>
+            </MenuItem>
+        </Menu>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200px"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Exe path: "/>
+            <TextBox Grid.Column="1" x:Name="path" Text="C:\Windows\notepad.exe"></TextBox>
+
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Process name: "/>
+            <TextBox Grid.Row="1" Grid.Column="1" x:Name="process" Text="notepad"></TextBox>
+
+            <Button Grid.Row="2" Content="push me" Grid.Column="1" Margin="2" Click="Button_Click"/>
+        </Grid>
+    </Grid>
+</Window>
